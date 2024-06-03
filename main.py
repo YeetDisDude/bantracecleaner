@@ -1,10 +1,10 @@
-import os, shutil, winreg, ctypes, time, sys
+import os, shutil, winreg, ctypes
 try:
     from colorama import Fore
     import psutil
 except ImportError:
     count = 0
-    modules = ["colorama", psutil]
+    modules = ["colorama", "psutil"]
     for _ in modules:
         count += 1
         print(f"[INFO] Installing {_} | {count} / {len(modules)}")
