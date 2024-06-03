@@ -46,6 +46,7 @@ completed: int = 0
 user_ids_str: str = ""
 
 clear()
+os.system("title Ban Trace Cleaner")
 print("""Ban Trace Cleaner made by: YeetDisDude
 This script does NOT unban you! This only reduces the chances of getting banned when you are creating a new account. It is recommended to use this script before you create a new account.\n""")
 if pgisopen():
