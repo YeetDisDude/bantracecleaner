@@ -1,7 +1,9 @@
 import os, shutil, winreg, ctypes
 try:
     from colorama import Fore
+    import colorama
     import psutil
+    colorama.init()
 except ImportError:
     count = 0
     modules = ["colorama", "psutil"]
@@ -11,6 +13,7 @@ except ImportError:
         os.system(f"pip install {_} -q")
         print(f"[INFO] Successfully installed {_}\n")
 clear = lambda: os.system('cls' if os.name in ('nt', 'dos') else 'clear')
+
 
 def info(msg: str) -> None:
     print(f"{Fore.LIGHTCYAN_EX}[INFO]{Fore.RESET} {msg}")
