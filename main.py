@@ -70,9 +70,12 @@ verbose(f"Pixel Gun Team Directory: {pgteamdir}")
 
 if os.path.isdir(pgteamdir):
     verbose("Directory Exists! Deleting...")
-    directories = os.listdir(idDir)
-    user_ids = [int(d.split("-")[1]) for d in directories if d.startswith("user-")]
-    user_ids_str = ", ".join(str(id) for id in user_ids)
+    try:
+        directories = os.listdir(idDir)
+        user_ids = [int(d.split("-")[1]) for d in directories if d.startswith("user-")]
+        user_ids_str = ", ".join(str(id) for id in user_ids)
+    except:
+        error("Failed to get list of IDs, skipping... (you can ignore this)")
     try:
         shutil.rmtree(pgteamdir)
         success("Deleted Pixel Gun Team!")
